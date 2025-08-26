@@ -10,7 +10,7 @@ export default async function handler(req, res) {
 
   try {
     // Load background template
-    const template = await loadImage("https://i.ibb.co/5TwSHpP/Guardian-Place-full-1484178.jpg");
+    const template = await loadImage("https://i.ibb.co/vvwcR9wb/image.jpg");
 
     // Load avatars
     const [av1Resp, av2Resp] = await Promise.all([
