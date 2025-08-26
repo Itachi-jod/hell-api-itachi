@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   try {
     // Load background template
-    const template = await loadImage("https://preview.redd.it/bulmm46zcfy91.png?auto=webp&s=8032342154184d32912f8077393de67a2f6bd421");
+    const template = await loadImage("https://i.imgur.com/Gh53nAE.jpeg");
 
     // Load avatars
     const [av1Resp, av2Resp] = await Promise.all([
