@@ -1,0 +1,12 @@
+{
+  "name": "hell-api",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "@napi-rs/canvas": "^0.1.77"
+  }
+}
