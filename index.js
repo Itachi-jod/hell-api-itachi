@@ -1,4 +1,3 @@
-// index.js
 import { createCanvas, loadImage } from "@napi-rs/canvas";
 import axios from "axios";
 
@@ -11,7 +10,7 @@ export default async function handler(req, res) {
 
   try {
     // Load background template
-    const template = await loadImage("https://i.imgur.com/Gh53nAE.jpeg");
+    const template = await loadImage("https://i.ibb.co/5TwSHpP/Guardian-Place-full-1484178.jpg");
 
     // Load avatars
     const [av1Resp, av2Resp] = await Promise.all([
@@ -41,17 +40,17 @@ export default async function handler(req, res) {
       ctx.restore();
     };
 
-    // Draw avatars according to your requested positions
-    drawCircleImage(avone, 40, 260, 360, 370);  // first avatar
-    drawCircleImage(avtwo, 40, 980, 360, 370); // second avatar
+    // Draw avatars
+    drawCircleImage(avone, 40, 260, 360, 370);
+    drawCircleImage(avtwo, 40, 980, 360, 370);
 
     // Send final image as PNG
     res.setHeader("Content-Type", "image/png");
-    const buffer = await canvas.encode("png");
+    const buffer = canvas.toBuffer("image/png"); // <-- corrected
     return res.send(buffer);
 
   } catch (err) {
     console.error("Canvas error:", err);
     return res.status(500).json({ error: "Error generating image" });
   }
-      }
+}
